@@ -1,0 +1,46 @@
+/* src/app/student-table/student-table.component.css */
+
+div {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  button {
+    padding: 8px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  button.update {
+    background-color: #2196f3;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  

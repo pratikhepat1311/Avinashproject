@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <h2>Student Registration</h2>
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+  
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit(studentForm.value)">
+    <!-- Your form fields go here -->
+   
+
+    <div class="form-group">
+      <label for="ID">ID:</label>
+      <input type="text" id="ID" formControlName="ID" required />
+      <div *ngIf="studentForm.get('ID')?.invalid && studentForm.get('ID')?.touched" class="text-danger">
+        ID is required.
+      </div>
+      <div *ngIf="studentForm.get('ID')?.invalid && studentForm.get('ID')?.touched" class="text-danger">
+        Please enter a valid ID pattern.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Name"> Name</label>
+      <input type="text" id="Name" class="form-control" formControlName="Name">
+      <div *ngIf="studentForm.get('Name')?.invalid && studentForm.get('Name')?.touched" class="text-danger">
+        Minimum length is 2 characters.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Age">Age:</label>
+  <input type="number" id="Age" formControlName="Age" required />
+  <div *ngIf="studentForm.get('Age')?.invalid && studentForm.get('Age')?.touched" class="text-danger">
+    Age is required.
+  </div>
+  <div *ngIf="studentForm.get('age')?.invalid && studentForm.get('Age')?.touched" class="text-danger">
+    Please enter a valid age between 18 and 100.
+  </div>
+</div>
+
+    <div class="form-group">
+      <label for="Department">Department:</label>
+  <input type="text" id="Department" formControlName="Department" required />
+  <div *ngIf="studentForm.get('Department')?.invalid && studentForm.get('Department')?.touched" class="text-danger">
+    Department is required.
+  </div>
+</div>
+
+    <div class="form-group">
+      <label for="Percentage">Percentage:</label>
+  <input type="number" id="Percentage" formControlName="Percentage" required />
+  <div *ngIf="studentForm.get('Percentage')?.invalid && studentForm.get('Percentage')?.touched" class="text-danger">
+    Percentage is required.
+  </div>
+</div>
+    
+    
+
+      <div class="form-group">
+        <label for="Location">Location:</label>
+  <input type="text" id="Location" formControlName="Location" required />
+  <div *ngIf="studentForm.get('Location')?.invalid && studentForm.get('Location')?.touched" class="text-danger">
+    Location is required.
+  </div>
+</div>
+
+      <div class="form-group">
+        <label for="CreatedDate">Created Date:</label>
+        <input type="date" id="CreatedDate" formControlName="CreatedDate" required />
+        <div *ngIf="studentForm.get('CreatedDate')?.invalid && studentForm.get('CreatedDate')?.touched" class="text-danger">
+          Created Date is required.
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    <!-- <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Submit</button>
+  -->
+  </form>
+</div>
